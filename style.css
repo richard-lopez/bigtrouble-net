@@ -1,0 +1,93 @@
+/* Google Fonts loaded via <link> in index.html — no @import needed */
+
+/* =====================
+   RESET
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================
+   CUSTOM PROPERTIES
+   ===================== */
+:root {
+  /* Colors */
+  --color-bg:   #d4d0cb;
+  --color-text: #0a0a0a;
+
+  /* Fonts */
+  --font-heading: 'Syne', sans-serif;
+  --font-body:    'Ubuntu Mono', monospace;
+
+  /* Type scale */
+  --text-sm:   0.875rem;  /*  14px */
+  --text-base: 1rem;      /*  16px */
+  --text-lg:   1.25rem;   /*  20px */
+  --text-xl:   2rem;      /*  32px */
+  --text-2xl:  2.75rem;   /*  44px */
+  --text-3xl:  4.5rem;    /*  72px */
+
+  /* Spacing (used in layout phases) */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+}
+
+/* =====================
+   BASE
+   ===================== */
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+/* =====================
+   TYPOGRAPHY
+   ===================== */
+
+/* h1, h2, h3 — Syne, uppercase */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl);  }
+
+/* h4 — Ubuntu Mono bold italic (role titles) */
+h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 700;
+  font-style: italic;
+}
