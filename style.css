@@ -91,3 +91,82 @@ h4 {
   font-weight: 700;
   font-style: italic;
 }
+
+/* =====================
+   HEADER
+   ===================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.site-name {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+header nav {
+  display: flex;
+  gap: var(--space-md);
+}
+
+header nav a {
+  font-size: var(--text-sm);
+  text-decoration: none;
+}
+
+/* =====================
+   HERO
+   ===================== */
+.hero {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-md);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.hero img {
+  width: 100%;
+}
+
+/* =====================
+   INTRO
+   ===================== */
+.intro {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-md);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.section-label::before {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-text);
+}
+
+.intro p + p {
+  margin-top: var(--space-sm);
+}
