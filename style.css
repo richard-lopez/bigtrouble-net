@@ -414,6 +414,11 @@ footer {
     overflow: hidden;
   }
 
+  body {
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+  }
+
   /* --- Hero --- */
   .hero {
     display: flex;
@@ -432,6 +437,70 @@ footer {
   .hero img {
     width: 100%;
     margin-top: -2rem;
+  }
+
+  /* --- Intro --- */
+  .intro {
+    display: block;
+  }
+
+  .section-label::before {
+    display: none;
+  }
+
+  /* --- Experience --- */
+  .experience > h2 {
+    font-size: 1.5rem;
+  }
+
+  .experience-item {
+    display: block;
+  }
+
+  .experience-item > time {
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+
+  .experience-item > time::before {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--space-xs);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* --- Education --- */
+  .education {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .education h2 {
+    order: -1;
+    font-size: 1.5rem;
+  }
+
+  /* --- Competencies --- */
+  .competencies {
+    display: block;
+  }
+
+  .competencies h2 {
+    font-size: 1.5rem;
+  }
+
+  /* --- Interests --- */
+  .interests {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .interests h2 {
+    order: -1;
+    font-size: 1.5rem;
   }
 
 }
