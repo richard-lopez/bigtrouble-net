@@ -508,4 +508,12 @@ footer {
     font-size: 3.5rem;
   }
 
+  /* --- Footer --- */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    border-top: none;
+  }
+
 }
