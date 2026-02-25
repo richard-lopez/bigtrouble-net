@@ -503,4 +503,9 @@ footer {
     font-size: 1.5rem;
   }
 
+  /* --- Marquee --- */
+  .marquee-track span {
+    font-size: 3.5rem;
+  }
+
 }
