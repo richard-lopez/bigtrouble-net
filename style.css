@@ -414,4 +414,24 @@ footer {
     overflow: hidden;
   }
 
+  /* --- Hero --- */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md) var(--space-md) 0;
+    max-width: none;
+  }
+
+  .hero h1 {
+    order: -1;
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero img {
+    width: 100%;
+    margin-top: -2rem;
+  }
+
 }
