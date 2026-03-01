@@ -25,7 +25,7 @@ Never push to main, modify CLAUDE.md, or add dependencies without explicit instr
 
 ## Design Rules
 
-- Background: #d4d0cb | Text: #0a0a0a | No accent colors
+- Background: #dcdcdc | Text: #0a0a0a | No accent colors
 - Headings: Syne 700/800, uppercase | Body: Ubuntu Mono 400/700
 - Layout: two-column CSS grid (left ~220px | right 1fr), max width ~1000px
 - Dividers: wavy SVG paths between major sections
