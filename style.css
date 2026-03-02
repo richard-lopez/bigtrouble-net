@@ -165,7 +165,7 @@ header nav a {
    ===================== */
 .hero {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 242px 1fr;
   gap: var(--space-md);
   max-width: 1000px;
   margin: 0 auto;
@@ -181,7 +181,7 @@ header nav a {
    ===================== */
 .intro {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 242px 1fr;
   gap: var(--space-md);
   max-width: 1000px;
   margin: 0 auto;
@@ -243,7 +243,7 @@ header nav a {
 
 .experience-item {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 242px 1fr;
   gap: var(--space-md);
 }
 
