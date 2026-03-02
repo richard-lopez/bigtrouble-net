@@ -259,6 +259,7 @@ header nav a {
   gap: var(--space-sm);
   font-size: var(--text-base);
   font-weight: 700;
+  padding-top: 0.75rem;
 }
 
 .experience-item > time::before {
