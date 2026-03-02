@@ -165,8 +165,8 @@ header nav a {
    ===================== */
 .hero {
   display: grid;
-  grid-template-columns: 242px 1fr;
-  gap: var(--space-md);
+  grid-template-columns: 266px 1fr;
+  gap: 2.2rem;
   max-width: 1000px;
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
@@ -181,8 +181,9 @@ header nav a {
    ===================== */
 .intro {
   display: grid;
-  grid-template-columns: 242px 1fr;
-  gap: var(--space-md);
+  grid-template-columns: 266px 1fr;
+  gap: 2.2rem;
+  align-items: start;
   max-width: 1000px;
   margin: 0 auto;
   padding: var(--space-md) var(--space-md) var(--space-lg);
@@ -243,8 +244,9 @@ header nav a {
 
 .experience-item {
   display: grid;
-  grid-template-columns: 242px 1fr;
-  gap: var(--space-md);
+  grid-template-columns: 266px 1fr;
+  gap: 2.2rem;
+  align-items: start;
 }
 
 .experience-item + .experience-item {
@@ -261,10 +263,9 @@ header nav a {
 
 .experience-item > time::before {
   content: '';
-  width: 2rem;
+  flex: 1;
   height: 1px;
   background-color: var(--color-text);
-  flex-shrink: 0;
 }
 
 .experience-content h3 {
