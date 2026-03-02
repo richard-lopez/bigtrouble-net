@@ -426,7 +426,7 @@ footer {
 
   .hero h1 {
     order: -1;
-    font-size: 2rem;
+    font-size: 2.5rem;
     position: relative;
     z-index: 1;
   }
@@ -447,7 +447,7 @@ footer {
 
   /* --- Experience --- */
   .experience > h2 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
 
   .experience-item {
@@ -492,6 +492,12 @@ footer {
 
   .interests h3 {
     order: -1;
+  }
+
+  .education > h3,
+  .competencies > h3,
+  .interests > h3 {
+    font-size: 2.0rem;
   }
 
   /* --- Marquee --- */
