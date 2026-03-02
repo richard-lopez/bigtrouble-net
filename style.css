@@ -23,11 +23,11 @@
 
   /* Type scale */
   --text-sm:   0.875rem;  /*  14px */
-  --text-base: 1rem;      /*  16px */
+  --text-base: 1.125rem;  /*  18px */
   --text-lg:   1.25rem;   /*  20px */
-  --text-xl:   2rem;      /*  32px */
-  --text-2xl:  2.75rem;   /*  44px */
-  --text-3xl:  4.5rem;    /*  72px */
+  --text-xl:   2.8rem;    /*  ~45px — h3 */
+  --text-2xl:  3.8rem;    /*  ~61px — h2 */
+  --text-3xl:  4.2rem;    /*  ~67px — h1 */
   --text-4xl:  7rem;      /* 112px — marquee */
 
   /* Spacing (used in layout phases) */
@@ -75,10 +75,10 @@ ul {
 /* h1, h2, h3 — Syne, uppercase */
 h1, h2, h3 {
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
 }
 
 h1 { font-size: var(--text-3xl); }
@@ -104,8 +104,8 @@ header {
 }
 
 .site-name {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -117,7 +117,7 @@ header nav {
 }
 
 header nav a {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   text-decoration: none;
 }
 
@@ -165,7 +165,7 @@ header nav a {
    ===================== */
 .hero {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 242px 1fr;
   gap: var(--space-md);
   max-width: 1000px;
   margin: 0 auto;
@@ -181,7 +181,7 @@ header nav a {
    ===================== */
 .intro {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 242px 1fr;
   gap: var(--space-md);
   max-width: 1000px;
   margin: 0 auto;
@@ -193,7 +193,7 @@ header nav a {
   align-items: center;
   gap: var(--space-sm);
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 700;
   text-transform: none;
   letter-spacing: 0;
@@ -243,7 +243,7 @@ header nav a {
 
 .experience-item {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 242px 1fr;
   gap: var(--space-md);
 }
 
@@ -255,7 +255,7 @@ header nav a {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 700;
 }
 
@@ -298,11 +298,6 @@ header nav a {
   margin-bottom: var(--space-sm);
 }
 
-.education h2,
-.competencies h2,
-.interests h2 {
-  font-size: 1.25rem;
-}
 
 /* =====================
    COMPETENCIES
@@ -366,7 +361,7 @@ footer {
   align-items: baseline;
   padding: var(--space-md) var(--space-md);
   border-top: 1px solid var(--color-text);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 
 /* =====================
@@ -478,18 +473,13 @@ footer {
     flex-direction: column;
   }
 
-  .education h2 {
+  .education h3 {
     order: -1;
-    font-size: 1.5rem;
   }
 
   /* --- Competencies --- */
   .competencies {
     display: block;
-  }
-
-  .competencies h2 {
-    font-size: 1.5rem;
   }
 
   /* --- Interests --- */
@@ -498,9 +488,8 @@ footer {
     flex-direction: column;
   }
 
-  .interests h2 {
+  .interests h3 {
     order: -1;
-    font-size: 1.5rem;
   }
 
   /* --- Marquee --- */
