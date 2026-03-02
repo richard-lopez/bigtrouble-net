@@ -20,3 +20,6 @@ npm-debug.log*
 
 # Development reference assets
 assets/reference/
+
+# Git worktrees
+.worktrees/
