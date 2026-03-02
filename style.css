@@ -433,7 +433,10 @@ footer {
 
   .hero img {
     width: 100%;
-    margin-top: -2rem;
+    aspect-ratio: 15 / 14;
+    object-fit: cover;
+    object-position: center;
+    margin-top: -6rem;
   }
 
   /* --- Intro --- */
