@@ -333,25 +333,24 @@ header nav a {
 .marquee-section {
   overflow: hidden;
   padding: var(--space-lg) 0;
+  color: var(--color-text);
 }
 
-.marquee-track {
-  display: flex;
+.marquee-wave {
+  width: 100%;
+  line-height: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-  animation: marquee-scroll 18s linear infinite;
-}
-
-.marquee-track span {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: var(--text-4xl);
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  border: 0;
 }
 
 /* =====================
@@ -501,11 +500,6 @@ footer {
   .competencies > h3,
   .interests > h3 {
     font-size: 2.0rem;
-  }
-
-  /* --- Marquee --- */
-  .marquee-track span {
-    font-size: 3.5rem;
   }
 
   /* --- Footer --- */
