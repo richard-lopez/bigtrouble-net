@@ -293,9 +293,11 @@ header nav a {
 }
 
 /* =====================
-   EDUCATION
+   EDUCATION / COMPETENCIES / INTERESTS
    ===================== */
-.education {
+.education,
+.competencies,
+.interests {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
@@ -308,33 +310,6 @@ header nav a {
 .edu-school {
   font-weight: 700;
   margin-bottom: var(--space-sm);
-}
-
-
-/* =====================
-   COMPETENCIES
-   ===================== */
-.competencies {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
-  align-items: center;
-}
-
-/* =====================
-   INTERESTS
-   ===================== */
-.interests {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
-  align-items: center;
 }
 
 /* =====================
