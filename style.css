@@ -269,7 +269,7 @@ header nav a {
   gap: var(--space-sm);
   font-size: var(--text-base);
   font-weight: 700;
-  padding-top: 0.75rem;
+  padding-top: var(--space-sm);
 }
 
 .experience-item > time::before {
@@ -317,7 +317,7 @@ header nav a {
    ===================== */
 .marquee-section {
   overflow: hidden;
-  padding: 4rem 0 0.57rem;
+  padding: var(--space-2xl) 0 var(--space-xs);
   color: var(--color-text);
 }
 
@@ -338,7 +338,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.36rem var(--space-md) var(--space-md);
+  padding: var(--space-xs) var(--space-md) var(--space-md);
   font-size: var(--text-base);
 }
 
