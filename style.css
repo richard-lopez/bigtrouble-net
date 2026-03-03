@@ -36,6 +36,12 @@
   --space-md:  2rem;
   --space-lg:  2.5rem;
   --space-xl:  8rem;
+  --space-2xl: 4rem;
+
+  /* Layout */
+  --max-width: 1000px;   /* page content cap */
+  --col-left:  266px;    /* left column width in two-column grids */
+  --gap-grid:  2.2rem;   /* standard column gap */
 }
 
 /* =====================
@@ -168,10 +174,10 @@ header nav a {
    ===================== */
 .hero {
   display: grid;
-  grid-template-columns: 266px 1fr;
-  gap: 2.2rem;
+  grid-template-columns: var(--col-left) 1fr;
+  gap: var(--gap-grid);
   align-items: center;
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
 }
@@ -185,10 +191,10 @@ header nav a {
    ===================== */
 .intro {
   display: grid;
-  grid-template-columns: 266px 1fr;
-  gap: 2.2rem;
+  grid-template-columns: var(--col-left) 1fr;
+  gap: var(--gap-grid);
   align-items: start;
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-md) var(--space-md) var(--space-lg);
 }
@@ -236,7 +242,7 @@ header nav a {
    EXPERIENCE
    ===================== */
 .experience {
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
 }
@@ -248,8 +254,8 @@ header nav a {
 
 .experience-item {
   display: grid;
-  grid-template-columns: 266px 1fr;
-  gap: 2.2rem;
+  grid-template-columns: var(--col-left) 1fr;
+  gap: var(--gap-grid);
   align-items: start;
 }
 
@@ -263,7 +269,7 @@ header nav a {
   gap: var(--space-sm);
   font-size: var(--text-base);
   font-weight: 700;
-  padding-top: 0.75rem;
+  padding-top: var(--space-sm);
 }
 
 .experience-item > time::before {
@@ -287,13 +293,15 @@ header nav a {
 }
 
 /* =====================
-   EDUCATION
+   EDUCATION / COMPETENCIES / INTERESTS
    ===================== */
-.education {
+.education,
+.competencies,
+.interests {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
   align-items: center;
@@ -304,39 +312,12 @@ header nav a {
   margin-bottom: var(--space-sm);
 }
 
-
-/* =====================
-   COMPETENCIES
-   ===================== */
-.competencies {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
-  align-items: center;
-}
-
-/* =====================
-   INTERESTS
-   ===================== */
-.interests {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
-  align-items: center;
-}
-
 /* =====================
    REACH OUT MARQUEE
    ===================== */
 .marquee-section {
   overflow: hidden;
-  padding: 4rem 0 0.57rem;
+  padding: var(--space-2xl) 0 var(--space-xs);
   color: var(--color-text);
 }
 
@@ -350,18 +331,6 @@ header nav a {
   line-height: 0;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 /* =====================
    FOOTER
    ===================== */
@@ -369,7 +338,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.36rem var(--space-md) var(--space-md);
+  padding: var(--space-xs) var(--space-md) var(--space-md);
   font-size: var(--text-base);
 }
 
@@ -483,28 +452,15 @@ footer {
     font-size: 1.5rem;
   }
 
-  /* --- Education --- */
-  .education {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .education h3 {
-    order: -1;
-  }
-
-  /* --- Competencies --- */
-  .competencies {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* --- Interests --- */
+  /* --- Education / Competencies / Interests --- */
+  .education,
+  .competencies,
   .interests {
     display: flex;
     flex-direction: column;
   }
 
+  .education h3,
   .interests h3 {
     order: -1;
   }
