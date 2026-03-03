@@ -375,6 +375,10 @@ footer {
    ===================== */
 @media (max-width: 768px) {
 
+  :root {
+    --space-lg: 2rem;
+  }
+
   /* --- Header / Nav --- */
   .nav-toggle {
     display: flex;
@@ -488,7 +492,8 @@ footer {
 
   /* --- Competencies --- */
   .competencies {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   /* --- Interests --- */
