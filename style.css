@@ -47,6 +47,13 @@ html {
 
 body {
   background-color: var(--color-bg);
+  background-image:
+    /* major grid — every 100px */
+    repeating-linear-gradient(rgba(0,0,0,0.09) 0, rgba(0,0,0,0.09) 1px, transparent 1px, transparent 100px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.09) 0, rgba(0,0,0,0.09) 1px, transparent 1px, transparent 100px),
+    /* minor grid — every 20px */
+    repeating-linear-gradient(rgba(0,0,0,0.05) 0, rgba(0,0,0,0.05) 1px, transparent 1px, transparent 20px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0, rgba(0,0,0,0.05) 1px, transparent 1px, transparent 20px);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--text-base);
