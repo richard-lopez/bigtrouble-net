@@ -36,6 +36,12 @@
   --space-md:  2rem;
   --space-lg:  2.5rem;
   --space-xl:  8rem;
+  --space-2xl: 4rem;
+
+  /* Layout */
+  --max-width: 1000px;   /* page content cap */
+  --col-left:  266px;    /* left column width in two-column grids */
+  --gap-grid:  2.2rem;   /* standard column gap */
 }
 
 /* =====================
@@ -168,10 +174,10 @@ header nav a {
    ===================== */
 .hero {
   display: grid;
-  grid-template-columns: 266px 1fr;
-  gap: 2.2rem;
+  grid-template-columns: var(--col-left) 1fr;
+  gap: var(--gap-grid);
   align-items: center;
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
 }
@@ -185,10 +191,10 @@ header nav a {
    ===================== */
 .intro {
   display: grid;
-  grid-template-columns: 266px 1fr;
-  gap: 2.2rem;
+  grid-template-columns: var(--col-left) 1fr;
+  gap: var(--gap-grid);
   align-items: start;
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-md) var(--space-md) var(--space-lg);
 }
@@ -236,7 +242,7 @@ header nav a {
    EXPERIENCE
    ===================== */
 .experience {
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
 }
@@ -248,8 +254,8 @@ header nav a {
 
 .experience-item {
   display: grid;
-  grid-template-columns: 266px 1fr;
-  gap: 2.2rem;
+  grid-template-columns: var(--col-left) 1fr;
+  gap: var(--gap-grid);
   align-items: start;
 }
 
@@ -293,7 +299,7 @@ header nav a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
   align-items: center;
@@ -312,7 +318,7 @@ header nav a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
   align-items: center;
@@ -325,7 +331,7 @@ header nav a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
   align-items: center;
