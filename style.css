@@ -34,7 +34,7 @@
   --space-xs:  0.5rem;
   --space-sm:  1rem;
   --space-md:  2rem;
-  --space-lg:  4rem;
+  --space-lg:  2.5rem;
   --space-xl:  8rem;
 }
 
@@ -167,6 +167,7 @@ header nav a {
   display: grid;
   grid-template-columns: 266px 1fr;
   gap: 2.2rem;
+  align-items: center;
   max-width: 1000px;
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
@@ -332,8 +333,13 @@ header nav a {
    ===================== */
 .marquee-section {
   overflow: hidden;
-  padding: var(--space-lg) 0;
+  padding: 4rem 0 0.57rem;
   color: var(--color-text);
+}
+
+.marquee-link {
+  display: block;
+  cursor: pointer;
 }
 
 .marquee-wave {
@@ -360,8 +366,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: var(--space-md) var(--space-md);
-  border-top: 1px solid var(--color-text);
+  padding: 0.36rem var(--space-md) var(--space-md);
   font-size: var(--text-base);
 }
 
@@ -369,6 +374,10 @@ footer {
    MOBILE
    ===================== */
 @media (max-width: 768px) {
+
+  :root {
+    --space-lg: 2rem;
+  }
 
   /* --- Header / Nav --- */
   .nav-toggle {
@@ -419,7 +428,7 @@ footer {
   .hero {
     display: flex;
     flex-direction: column;
-    padding: var(--space-md) var(--space-md) 0;
+    padding: 1.6rem var(--space-md) 0;
     max-width: none;
   }
 
@@ -483,7 +492,8 @@ footer {
 
   /* --- Competencies --- */
   .competencies {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   /* --- Interests --- */
