@@ -480,4 +480,75 @@ footer {
     border-top: none;
   }
 
+  /* --- Mobile nav open animation --- */
+  .site-nav.is-open {
+    animation: fade-in 0.25s ease both;
+  }
+
+  .site-nav.is-open a:nth-child(1) {
+    animation: fade-up 0.35s 0.10s ease both;
+  }
+
+  .site-nav.is-open a:nth-child(2) {
+    animation: fade-up 0.35s 0.20s ease both;
+  }
+
+}
+
+/* =====================
+   ANIMATIONS
+   ===================== */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Page-load: header */
+.site-name {
+  animation: fade-up 0.5s ease both;
+}
+
+header nav {
+  animation: fade-in 0.5s 0.15s ease both;
+}
+
+/* Page-load: hero */
+.hero picture {
+  animation: fade-in 0.8s 0.1s ease both;
+}
+
+.hero h1 {
+  animation: fade-up 0.6s 0.35s ease both;
+}
+
+/* Scroll-triggered */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--anim-delay, 0ms);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.animate-on-scroll.fade-only {
+  transform: none;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay:    0ms   !important;
+    transition-duration: 0.01ms !important;
+  }
 }
