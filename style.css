@@ -553,7 +553,7 @@ header nav {
 .draw-in path {
   stroke-dasharray: var(--path-length, 2000);
   stroke-dashoffset: var(--path-length, 2000);
-  transition: stroke-dashoffset 0.5s ease;
+  transition: stroke-dashoffset 0.8s ease;
 }
 
 .draw-in.is-visible path {
