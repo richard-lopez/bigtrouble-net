@@ -544,6 +544,27 @@ header nav {
   transform: none;
 }
 
+/* Draw-in dividers: container is always visible; path animates */
+.animate-on-scroll.draw-in {
+  opacity: 1;
+  transform: none;
+}
+
+.draw-in path {
+  stroke-dasharray: var(--path-length, 2000);
+  stroke-dashoffset: var(--path-length, 2000);
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.draw-in.is-visible path {
+  stroke-dashoffset: 0;
+}
+
+/* Right-to-left: mirror the SVG horizontally */
+.draw-rtl svg {
+  transform: scaleX(-1);
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
