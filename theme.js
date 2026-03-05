@@ -11,6 +11,8 @@
     if (!btn) return;
 
     updateAriaLabel(theme);
+    updateThemeColor(theme);
+    updateFavicon(theme);
 
     btn.addEventListener('click', function () {
       var current = document.documentElement.getAttribute('data-theme');
