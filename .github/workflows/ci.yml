@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-html:
+    name: Validate HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: Cyb3r-Jak3/html5validator-action@41633d488eb36e18fd1a95ffc83daf1bf22a75bd # v7.2.0
+        with:
+          root: .
+
+  validate-css:
+    name: Validate CSS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Validate style.css via W3C CSS Validator
+        run: |
+          result=$(curl -s "https://jigsaw.w3.org/css-validator/validator" \
+            -F "file=@style.css" \
+            -F "output=json")
+          errors=$(echo "$result" | jq '.cssvalidation.result.errorcount')
+          echo "CSS validation errors: $errors"
+          if [ "$errors" -gt "0" ]; then
+            echo "$result" | jq '.cssvalidation.errors'
+            exit 1
+          fi
+
+  check-links:
+    name: Check Links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2
+        with:
+          args: --accept 200,206,403,429 --no-progress index.html
+          fail: true
+
+  check-js-syntax:
+    name: Check JS Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Check JS syntax
+        run: node --check marquee.js nav.js animations.js

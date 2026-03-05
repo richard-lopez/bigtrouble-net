@@ -2,9 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#dcdcdc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#dcdcdc">
     <meta name="description" content="Richard Lopez — Technical Project / Product Manager based in Los Angeles, CA.">
     <title>Richard Lopez — Technical PM / Product Manager</title>
+    <link rel="icon" href="assets/images/rl_favicon_light.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="assets/images/rl_favicon_dark.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="assets/images/rl_favicon_light.png" id="favicon-default">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -17,6 +23,25 @@
       <nav class="site-nav">
         <a href="mailto:richard@bigtrouble.net">richard@bigtrouble.net</a>
         <a href="https://www.linkedin.com/in/richardjlopez/">LinkedIn</a>
+        <span class="nav-divider" aria-hidden="true"></span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <!-- Moon icon: shown in light mode -->
+          <svg class="icon-moon" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M10 3a7 7 0 1 0 7 7 5 5 0 0 1-7-7z" fill="currentColor"/>
+          </svg>
+          <!-- Sun icon: shown in dark mode -->
+          <svg class="icon-sun" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <circle cx="10" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="10" y1="1.5" x2="10" y2="4" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="10" y1="16" x2="10" y2="18.5" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="1.5" y1="10" x2="4" y2="10" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="16" y1="10" x2="18.5" y2="10" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="3.6" y1="3.6" x2="5.4" y2="5.4" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="14.6" y1="14.6" x2="16.4" y2="16.4" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="16.4" y1="3.6" x2="14.6" y2="5.4" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="5.4" y1="14.6" x2="3.6" y2="16.4" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </button>
       </nav>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span>
@@ -28,33 +53,36 @@
 
       <!-- Hero -->
       <section class="hero">
-        <img src="assets/images/headshot.jpeg" alt="Richard Lopez">
+        <picture>
+          <source srcset="assets/images/headshot.avif" type="image/avif">
+          <img src="assets/images/headshot.jpeg" alt="Richard Lopez">
+        </picture>
         <h1>Technical Project / Product Manager</h1>
       </section>
 
       <!-- Intro -->
       <section class="intro">
-        <h2 class="section-label">Intro</h2>
-        <div>
+        <h2 class="section-label animate-on-scroll">Intro</h2>
+        <div class="animate-on-scroll" style="--anim-delay: 150ms">
           <p>Technical PM with 10+ years of experience in tech shipping products with measurable wins. No nonsense. I want to build meaningful products that benefit humans and Earth. I want to help teams build them well.</p>
           <p>I'm based in L.A. but open to relocating.</p>
         </div>
       </section>
 
       <!-- Wavy Divider -->
-      <div class="wavy-divider" aria-hidden="true">
+      <div class="wavy-divider animate-on-scroll draw-in" aria-hidden="true">
         <svg viewBox="0 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12"
-                stroke="#0a0a0a" stroke-width="1.5" fill="none"/>
+          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12 S1250,0 1375,12 S1500,24 1625,12"
+                stroke="currentColor" stroke-width="1.5" fill="none" filter="url(#rough-line)"/>
         </svg>
       </div>
 
       <!-- Experience -->
       <section class="experience">
-        <h2>Experience</h2>
+        <h2 class="animate-on-scroll">Experience</h2>
 
-        <article class="experience-item">
-          <time>2022–Current</time>
+        <article class="experience-item animate-on-scroll" style="--anim-delay: 0ms">
+          <time datetime="2022">2022–Current</time>
           <div class="experience-content">
             <h3>Paramount+</h3>
             <h4>Senior Technical Project Manager — Release Management</h4>
@@ -66,13 +94,14 @@
               <li>Drove cross-functional alignment and decision-making across workstreams which helped keep releases unblocked and on track with large projects such as Super Bowl '24, UFC, global regional market launches, and converging code bases into a monorepo.</li>
               <li>Cultivated systematic use of tooling, documentation and automation to clarify release scope and goals.</li>
               <li>Created custom dashboards and alerts with tools such as New Relic and Conviva to monitor release health and support market issue escalation and triage. Reduced platform crash rate from 3% to 0.1%.</li>
+              <li>Utilized Cursor to automate crash log reviews, root cause analysis, ticketing and suggested fixes for client engineering teams.</li>
               <li>Acted as partner management liaison with counterparts at Roku and Amazon to align on technical goals and platform feature adoption.</li>
             </ul>
           </div>
         </article>
 
-        <article class="experience-item">
-          <time>2021–2022</time>
+        <article class="experience-item animate-on-scroll" style="--anim-delay: 100ms">
+          <time datetime="2021">2021–2022</time>
           <div class="experience-content">
             <h3>Bean.la</h3>
             <h4>Senior Project Manager</h4>
@@ -86,8 +115,8 @@
           </div>
         </article>
 
-        <article class="experience-item">
-          <time>2018–2020</time>
+        <article class="experience-item animate-on-scroll" style="--anim-delay: 200ms">
+          <time datetime="2018">2018–2020</time>
           <div class="experience-content">
             <h3>Blizzard Ent.</h3>
             <h4>Product Manager</h4>
@@ -102,8 +131,8 @@
           </div>
         </article>
 
-        <article class="experience-item">
-          <time>2015–2018</time>
+        <article class="experience-item animate-on-scroll" style="--anim-delay: 300ms">
+          <time datetime="2015">2015–2018</time>
           <div class="experience-content">
             <h3>Thales</h3>
             <h4>Senior UX Product Owner</h4>
@@ -119,8 +148,8 @@
           </div>
         </article>
 
-        <article class="experience-item">
-          <time>2013–2015</time>
+        <article class="experience-item animate-on-scroll" style="--anim-delay: 400ms">
+          <time datetime="2013">2013–2015</time>
           <div class="experience-content">
             <h3>Thales</h3>
             <h4>Media Program Manager</h4>
@@ -132,8 +161,8 @@
           </div>
         </article>
 
-        <article class="experience-item">
-          <time>2012–2013</time>
+        <article class="experience-item animate-on-scroll" style="--anim-delay: 500ms">
+          <time datetime="2012">2012–2013</time>
           <div class="experience-content">
             <h3>Thales</h3>
             <h4>R&amp;D Hardware Developer — Intern</h4>
@@ -148,78 +177,93 @@
       </section>
 
       <!-- Wavy Divider -->
-      <div class="wavy-divider" aria-hidden="true">
-        <svg viewBox="0 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12"
-                stroke="#0a0a0a" stroke-width="1.5" fill="none"/>
+      <div class="wavy-divider animate-on-scroll draw-in draw-rtl" aria-hidden="true">
+        <svg viewBox="150 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12 S1250,0 1375,12 S1500,24 1625,12"
+                stroke="currentColor" stroke-width="1.5" fill="none" filter="url(#rough-line)"/>
         </svg>
       </div>
 
       <!-- Education -->
-      <section class="education">
+      <section class="education animate-on-scroll">
         <div class="education-content">
           <p class="edu-school">Cal State Polytechnic University, Pomona</p>
           <ul>
-            <li><time>2007–2013</time></li>
+            <li><time datetime="2007">2007–2013</time></li>
             <li>B.S. in Electrical Engineering, Minor in Physics</li>
           </ul>
         </div>
-        <h2>Education</h2>
+        <h3>Education</h3>
       </section>
 
       <!-- Wavy Divider -->
-      <div class="wavy-divider" aria-hidden="true">
-        <svg viewBox="0 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12"
-                stroke="#0a0a0a" stroke-width="1.5" fill="none"/>
+      <div class="wavy-divider animate-on-scroll draw-in" aria-hidden="true">
+        <svg viewBox="300 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12 S1250,0 1375,12 S1500,24 1625,12"
+                stroke="currentColor" stroke-width="1.5" fill="none" filter="url(#rough-line)"/>
         </svg>
       </div>
 
       <!-- Competencies -->
       <section class="competencies">
-        <h2>Competencies</h2>
-        <p>Product/project/program management, release management, software governance, CI/CD, Agile methodologies, automation via AI agents, SAFe certified, mobile &amp; web technical systems, mobile &amp; web UX/UI, complex end-to-end software lifecycles, qualitative &amp; quantitative analysis, CMS systems, Roku/Apple/Google/Amazon publishing platforms</p>
+        <h3 class="animate-on-scroll">Competencies</h3>
+        <p class="animate-on-scroll" style="--anim-delay: 100ms">Product/project/program management, release management, software governance, CI/CD, Agile methodologies, Claude Code, Cursor, automation via AI agents, SAFe certified, mobile &amp; web technical systems, mobile &amp; web UX/UI, complex end-to-end software lifecycles, qualitative &amp; quantitative analysis, CMS systems, Roku/Apple/Google/Amazon publishing platforms</p>
       </section>
 
       <!-- Wavy Divider -->
-      <div class="wavy-divider" aria-hidden="true">
-        <svg viewBox="0 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12"
-                stroke="#0a0a0a" stroke-width="1.5" fill="none"/>
+      <div class="wavy-divider animate-on-scroll draw-in draw-rtl" aria-hidden="true">
+        <svg viewBox="450 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12 S1250,0 1375,12 S1500,24 1625,12"
+                stroke="currentColor" stroke-width="1.5" fill="none" filter="url(#rough-line)"/>
         </svg>
       </div>
 
       <!-- Interests -->
       <section class="interests">
-        <p><a href="#">DJing</a>, <a href="#">collecting records</a> (6k+), backpacking (JMT 2020), trail running, birding, DIY electronics, Sci-Fi &amp; Fantasy, environmental activism, digital privacy &amp; rights activism</p>
-        <h2>Interests</h2>
+        <p class="animate-on-scroll"><a href="https://www.nts.live/shows/forager-records/episodes/forager-records-11th-september-2025">DJing</a>, <a href="https://www.discogs.com/user/time_span">collecting records</a> (6k+), backpacking (JMT 2020), trail running, birding, DIY electronics, Sci-Fi &amp; Fantasy, environmental activism, digital privacy &amp; rights activism</p>
+        <h3 class="animate-on-scroll" style="--anim-delay: 100ms">Interests</h3>
       </section>
 
       <!-- Wavy Divider -->
-      <div class="wavy-divider" aria-hidden="true">
-        <svg viewBox="0 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12"
-                stroke="#0a0a0a" stroke-width="1.5" fill="none"/>
+      <div class="wavy-divider animate-on-scroll draw-in" aria-hidden="true">
+        <svg viewBox="600 0 1000 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,12 C125,0 250,24 375,12 S625,0 750,12 S875,24 1000,12 S1250,0 1375,12 S1500,24 1625,12"
+                stroke="currentColor" stroke-width="1.5" fill="none" filter="url(#rough-line)"/>
         </svg>
       </div>
 
       <!-- REACH OUT Marquee -->
-      <section class="marquee-section" aria-label="Contact call to action">
-        <div class="marquee-track">
-          <span>REACH OUT / REACH OUT / REACH OUT / REACH OUT / REACH OUT / REACH OUT / REACH OUT / REACH OUT / </span>
-          <span aria-hidden="true">REACH OUT / REACH OUT / REACH OUT / REACH OUT / REACH OUT / REACH OUT / REACH OUT / REACH OUT / </span>
-        </div>
+      <section class="marquee-section animate-on-scroll fade-only">
+        <a href="mailto:richard@bigtrouble.net" class="marquee-link" aria-label="Reach out — send an email">
+          <div class="marquee-wave" aria-hidden="true">
+            <!-- SVG injected by marquee.js -->
+          </div>
+        </a>
       </section>
 
     </main>
 
-    <footer>
+    <footer class="animate-on-scroll fade-only">
       <p>Richard Lopez</p>
+      <p><a href="https://github.com/richard-lopez">Github</a></p>
       <p><a href="mailto:richard@bigtrouble.net">richard@bigtrouble.net</a></p>
       <p>Los Angeles, CA</p>
     </footer>
 
     <script src="nav.js"></script>
+    <script src="marquee.js"></script>
+    <script src="animations.js" defer></script>
+
+    <!-- Shared SVG filter: printed/rough-line effect for dividers and rule lines -->
+    <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden;">
+      <defs>
+        <filter id="rough-line" x="-5%" y="-50%" width="110%" height="200%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="4" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.9" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+          <feGaussianBlur in="displaced" stdDeviation="0.4"/>
+        </filter>
+      </defs>
+    </svg>
   </body>
 </html>
 <!-- test -->
