@@ -78,14 +78,20 @@
     svg.appendChild(text);
 
     container.appendChild(svg);
-    repeatWidth = textPath.getComputedTextLength() / repeats;
-    animate();
+    requestAnimationFrame(function () {
+      repeatWidth = textPath.getComputedTextLength() / repeats;
+      animate();
+    });
   }
 
   function animate() {
     offset -= SPEED;
+    // True modular wrap: keeps offset cleanly in [-repeatWidth, 0)
+    // Prevents floating-point drift from causing a visible gap at the loop point
     if (offset <= -repeatWidth) {
-      offset += repeatWidth;
+      offset = (offset % repeatWidth);
+      // % can return -0 or very small negative; normalize to ensure it's in range
+      if (offset === 0) offset = -0.001;
     }
     textPath.setAttribute('startOffset', offset);
     animId = requestAnimationFrame(animate);
