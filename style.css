@@ -216,6 +216,7 @@ header nav a {
   flex: 1;
   height: 1px;
   background-color: var(--color-text);
+  filter: url(#rough-line);
 }
 
 .intro p + p {
@@ -277,6 +278,7 @@ header nav a {
   flex: 1;
   height: 1px;
   background-color: var(--color-text);
+  filter: url(#rough-line);
 }
 
 .experience-content h3 {
