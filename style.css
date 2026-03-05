@@ -17,6 +17,9 @@
   --color-bg:   #dcdcdc;
   --color-text: #0a0a0a;
 
+  /* Grid background (light mode) */
+  --grid-bg: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZGVmcz48ZmlsdGVyIGlkPSJyIiB4PSItNSUiIHk9Ii01JSIgd2lkdGg9IjExMCUiIGhlaWdodD0iMTEwJSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMDYiIG51bU9jdGF2ZXM9IjMiIHNlZWQ9IjQiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48ZmVEaXNwbGFjZW1lbnRNYXAgaW49IlNvdXJjZUdyYXBoaWMiIHNjYWxlPSIwLjYiIHhDaGFubmVsU2VsZWN0b3I9IlIiIHlDaGFubmVsU2VsZWN0b3I9IkciLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIwLjM1Ii8+PC9maWx0ZXI+PHBhdHRlcm4gaWQ9Im1uIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0yMCAwSDBWMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgwLDAsMCwwLjA1NSkiIHN0cm9rZS13aWR0aD0iMC44IiBmaWx0ZXI9InVybCgjcikiLz48L3BhdHRlcm4+PHBhdHRlcm4gaWQ9Im1qIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTEwMCAwSDBWMTAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMCwwLDAsMC4wOTkpIiBzdHJva2Utd2lkdGg9IjEiIGZpbHRlcj0idXJsKCNyKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNtbikiLz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI21qKSIvPjwvc3ZnPg==');
+
   /* Fonts */
   --font-heading: 'Syne', sans-serif;
   --font-body:    'Ubuntu Mono', monospace;
@@ -44,6 +47,13 @@
   --gap-grid:  2.2rem;   /* standard column gap */
 }
 
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --color-bg:   #1e1e1e;
+  --color-text: #dcdcdc;
+  --grid-bg: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZGVmcz48ZmlsdGVyIGlkPSJyIiB4PSItNSUiIHk9Ii01JSIgd2lkdGg9IjExMCUiIGhlaWdodD0iMTEwJSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMDYiIG51bU9jdGF2ZXM9IjMiIHNlZWQ9IjQiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48ZmVEaXNwbGFjZW1lbnRNYXAgaW49IlNvdXJjZUdyYXBoaWMiIHNjYWxlPSIwLjYiIHhDaGFubmVsU2VsZWN0b3I9IlIiIHlDaGFubmVsU2VsZWN0b3I9IkciLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIwLjM1Ii8+PC9maWx0ZXI+PHBhdHRlcm4gaWQ9Im1uIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0yMCAwSDBWMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyMjAsMjIwLDIyMCwwLjA1NSkiIHN0cm9rZS13aWR0aD0iMC44IiBmaWx0ZXI9InVybCgjcikiLz48L3BhdHRlcm4+PHBhdHRlcm4gaWQ9Im1qIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTEwMCAwSDBWMTAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjIwLDIyMCwyMjAsMC4wOTkpIiBzdHJva2Utd2lkdGg9IjEiIGZpbHRlcj0idXJsKCNyKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNtbikiLz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI21qKSIvPjwvc3ZnPg==');
+}
+
 /* =====================
    BASE
    ===================== */
@@ -55,7 +65,7 @@ body {
   background-color: var(--color-bg);
   /* graph-paper grid: SVG with feTurbulence displacement + feGaussianBlur for a printed-paper feel */
   /* to revert to plain CSS gradients: git checkout HEAD~1 -- style.css */
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZGVmcz48ZmlsdGVyIGlkPSJyIiB4PSItNSUiIHk9Ii01JSIgd2lkdGg9IjExMCUiIGhlaWdodD0iMTEwJSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMDYiIG51bU9jdGF2ZXM9IjMiIHNlZWQ9IjQiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48ZmVEaXNwbGFjZW1lbnRNYXAgaW49IlNvdXJjZUdyYXBoaWMiIHNjYWxlPSIwLjYiIHhDaGFubmVsU2VsZWN0b3I9IlIiIHlDaGFubmVsU2VsZWN0b3I9IkciLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIwLjM1Ii8+PC9maWx0ZXI+PHBhdHRlcm4gaWQ9Im1uIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0yMCAwSDBWMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgwLDAsMCwwLjA1NSkiIHN0cm9rZS13aWR0aD0iMC44IiBmaWx0ZXI9InVybCgjcikiLz48L3BhdHRlcm4+PHBhdHRlcm4gaWQ9Im1qIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTEwMCAwSDBWMTAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMCwwLDAsMC4wOTkpIiBzdHJva2Utd2lkdGg9IjEiIGZpbHRlcj0idXJsKCNyKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNtbikiLz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI21qKSIvPjwvc3ZnPg==');
+  background-image: var(--grid-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -65,6 +75,7 @@ body {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img {
