@@ -59,6 +59,11 @@
    ===================== */
 html {
   font-size: 100%;
+  /* Paint the grid all the way into the notch/safe-area region.
+     With viewport-fit=cover, iOS Safari paints the <html> background
+     behind the notch; without this the notch band shows a blank colour. */
+  background-color: var(--color-bg);
+  background-image: var(--grid-bg);
 }
 
 body {
