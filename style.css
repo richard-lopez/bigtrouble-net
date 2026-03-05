@@ -546,6 +546,10 @@ footer {
     animation: fade-up 0.35s 0.20s ease both;
   }
 
+  .nav-divider {
+    display: none;
+  }
+
 }
 
 /* =====================
