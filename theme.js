@@ -14,31 +14,15 @@
     updateThemeColor(theme);
     updateFavicon(theme);
 
-    // On iOS Safari a tap fires touchend → then a synthetic ghost click ~300 ms
-    // later. Without a guard the toggle fires twice and appears to do nothing.
-    var lastTouchEnd = 0;
-
-    function applyThemeToggle() {
+    btn.addEventListener('click', function () {
       var current = document.documentElement.getAttribute('data-theme');
       var next = current === 'dark' ? 'light' : 'dark';
+
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
       updateAriaLabel(next);
       updateThemeColor(next);
       updateFavicon(next);
-    }
-
-    // Handle touch: preventDefault stops the ghost click iOS generates.
-    btn.addEventListener('touchend', function (e) {
-      e.preventDefault();
-      lastTouchEnd = Date.now();
-      applyThemeToggle();
-    });
-
-    // Handle mouse/keyboard click; skip if a touch just handled this.
-    btn.addEventListener('click', function () {
-      if (Date.now() - lastTouchEnd < 500) return;
-      applyThemeToggle();
     });
   });
 
