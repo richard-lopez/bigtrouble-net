@@ -53,7 +53,8 @@
 
     svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('aria-hidden', 'true');
-    svg.style.cssText = 'display:block;width:100%;height:' + svgHeight + 'px;overflow:visible;';
+    svg.setAttribute('class', 'marquee-svg');
+    svg.setAttribute('height', svgHeight);
 
     var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
     pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -64,12 +65,11 @@
     svg.appendChild(defs);
 
     var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('class', 'marquee-text');
     text.setAttribute('font-family', 'Syne, sans-serif');
     text.setAttribute('font-weight', '800');
     text.setAttribute('font-size', fontSize);
     text.setAttribute('fill', 'currentColor');
-    text.style.textTransform = 'uppercase';
-    text.style.letterSpacing = '-0.03em';
 
     textPath = document.createElementNS('http://www.w3.org/2000/svg', 'textPath');
     textPath.setAttribute('href', '#' + pathId);

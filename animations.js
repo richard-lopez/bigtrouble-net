@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Set exact path lengths for stroke-draw animation
-  document.querySelectorAll('.draw-in').forEach(el => {
-    const path = el.querySelector('path');
-    if (path) el.style.setProperty('--path-length', path.getTotalLength());
-  });
-
   const els = document.querySelectorAll('.animate-on-scroll');
   if (!els.length || !('IntersectionObserver' in window)) {
     els.forEach(el => el.classList.add('is-visible'));
