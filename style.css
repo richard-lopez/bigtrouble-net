@@ -605,6 +605,14 @@ header nav {
   transition-delay: var(--anim-delay, 0ms);
 }
 
+/* Animation delay classes (CSP-safe alternative to inline style) */
+.anim-delay-100 { --anim-delay: 100ms; }
+.anim-delay-150 { --anim-delay: 150ms; }
+.anim-delay-200 { --anim-delay: 200ms; }
+.anim-delay-300 { --anim-delay: 300ms; }
+.anim-delay-400 { --anim-delay: 400ms; }
+.anim-delay-500 { --anim-delay: 500ms; }
+
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: none;
@@ -621,8 +629,8 @@ header nav {
 }
 
 .draw-in path {
-  stroke-dasharray: var(--path-length, 2000);
-  stroke-dashoffset: var(--path-length, 2000);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
   transition: stroke-dashoffset 0.8s ease;
 }
 
@@ -633,6 +641,26 @@ header nav {
 /* Right-to-left: mirror the SVG horizontally */
 .draw-rtl svg {
   transform: scaleX(-1);
+}
+
+/* Hidden SVG container for shared filters/defs (visually hidden, no inline style) */
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Marquee SVG (injected by marquee.js) */
+.marquee-svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.marquee-text {
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
 }
 
 /* Accessibility */
