@@ -55,8 +55,15 @@
       <!-- Hero -->
       <section class="hero">
         <picture>
-          <source srcset="assets/images/headshot.avif" type="image/avif">
-          <img src="assets/images/headshot.jpeg" alt="Richard Lopez">
+          <source type="image/avif"
+                  srcset="assets/images/headshot-550.avif 550w,
+                          assets/images/headshot-1100.avif 1100w"
+                  sizes="(max-width: 768px) calc(100vw - 4rem), 266px">
+          <img src="assets/images/headshot-550.jpeg" alt="Richard Lopez"
+               srcset="assets/images/headshot-550.jpeg 550w,
+                       assets/images/headshot-1100.jpeg 1100w"
+               sizes="(max-width: 768px) calc(100vw - 4rem), 266px"
+               width="550" height="733" loading="eager" fetchpriority="high">
         </picture>
         <h1>Technical Project / Product Manager</h1>
       </section>
